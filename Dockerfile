@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose the port Django will run on
-EXPOSE 8000
+EXPOSE 8001
 
 # Start Django server when container starts
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8001"]
