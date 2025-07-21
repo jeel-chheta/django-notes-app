@@ -8,7 +8,7 @@ services:
     image: django_app:latest
     container_name: django_cont
     ports:
-      - "8000:8000"
+      - "8001:8001"  # Match Gunicorn port
     command: >
       sh -c "python manage.py migrate --noinput &&
              gunicorn notesapp.wsgi:application --bind 0.0.0.0:8001"
@@ -16,7 +16,7 @@ services:
       - .env
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8000/admin || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8001/admin || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -24,7 +24,7 @@ services:
     networks:
       - notes-app-nw
     volumes:
-      - .:/app  # Optional: useful for live reload during development
+      - .:/app
 
 networks:
   notes-app-nw:
