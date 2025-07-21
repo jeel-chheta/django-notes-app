@@ -23,8 +23,8 @@ services:
       start_period: 30s
     networks:
       - notes-app-nw
-    volumes:
-      - .:/app
+    #volumes:
+    #  - .:/app
 
 networks:
   notes-app-nw:
