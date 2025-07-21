@@ -1,0 +1,13 @@
+# Ignore MySQL data files
+data/mysql/db
+
+# Other useful ignores
+*.pyc
+__pycache__/
+.env
+*.db
+*.log
+*.sqlite3
+.git/
+.vscode/
+.idea/
