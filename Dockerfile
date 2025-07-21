@@ -25,4 +25,3 @@ COPY . .
 EXPOSE 8000
 
 # Optionally add entrypoint or CMD later in docker-compose
-  
